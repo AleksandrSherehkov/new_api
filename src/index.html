@@ -4,11 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
   </head>
   <body>
+    <form class="form-inline search-form js-search-form">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="searchQuery" class="sr-only">Что ищем?</label>
+        <input
+          type="text"
+          class="form-control"
+          name="query"
+          id="searchQuery"
+          placeholder="Что ищем?"
+          autocomplete="off"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Искать</button>
+    </form>
+
+    <ul class="articles js-articles-container"></ul>
+
+    <button type="button" class="btn btn-primary button" data-action="load-more">
+      <span
+        class="spinner-border spinner-border-sm spinner is-hidden"
+        role="status"
+        aria-hidden="true"
+      ></span>
+
+      <span class="label">Показать ещё</span>
+    </button>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
